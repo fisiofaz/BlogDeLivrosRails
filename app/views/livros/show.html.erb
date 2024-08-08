@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= @livro.titulo %></h1>
 
-<%= render @livro %>
+<p>
+  <strong>Autor:</strong>
+  <%= @livro.autor %>
+</p>
 
-<div>
-  <%= link_to "Edit this livro", edit_livro_path(@livro) %> |
-  <%= link_to "Back to livros", livros_path %>
+<p>
+  <strong>Nota:</strong>
+  <%= @livro.nota %>
+</p>
 
-  <%= button_to "Destroy this livro", @livro, method: :delete %>
-</div>
+<p>
+  <strong>Descrição:</strong>
+  <%= @livro.descricao %>
+</p>
+
+<%= link_to 'Editar', edit_livro_path(@livro) %> |
+<%= link_to 'Voltar', livros_path %>
