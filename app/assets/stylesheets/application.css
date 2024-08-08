@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+ /* app/assets/stylesheets/custom.css */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field input, .field textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .actions {
+    margin-top: 20px;
+  }
+  
