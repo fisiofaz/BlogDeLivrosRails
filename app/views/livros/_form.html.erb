@@ -1,37 +1,38 @@
-<%= form_with(model: livro) do |form| %>
-  <% if livro.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(livro.errors.count, "error") %> prohibited this livro from being saved:</h2>
+<!-- app/views/livros/_form.html.erb -->
 
+<%= form_with(model: livro, local: true) do |form| %>
+  <% if livro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(livro.errors.count, "erro") %> proibiu que este livro fosse salvo:</h2>
       <ul>
-        <% livro.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% livro.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :titulo, style: "display: block" %>
-    <%= form.text_field :titulo %>
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, placeholder: "Título do Livro" %>
   </div>
 
-  <div>
-    <%= form.label :autor, style: "display: block" %>
-    <%= form.text_field :autor %>
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor, placeholder: "Autor do Livro" %>
   </div>
 
-  <div>
-    <%= form.label :nota, style: "display: block" %>
-    <%= form.number_field :nota %>
+  <div class="field">
+    <%= form.label :nota %>
+    <%= form.number_field :nota, in: 0..10, placeholder: "Nota (0-10)" %>
   </div>
 
-  <div>
-    <%= form.label :descricao, style: "display: block" %>
-    <%= form.text_area :descricao %>
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao, placeholder: "Descrição do Livro" %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
